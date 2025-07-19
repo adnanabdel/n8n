@@ -1,566 +1,41 @@
-
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>تسجيل غيابات</title>
+  <title>نموذج رفع فيديو TikTok</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    .hidden { display: none; }
+  </style>
 </head>
-<body style="font-family: Arial; text-align: right; padding: 20px;">
-
-  <h1 style="text-align: center;">📌 الغيابات</h1>
-  <p style="text-align: center; font-size: 18px;">📅 التاريخ: 2025-06-14</p>
-
-  <form id="absenceForm">
-    <label for="month">الشهر:</label><br>
-    <select id="month" name="month" required>
-      <option value="فيفري">فيفري</option>
-      <option value="مارس">مارس</option>
-      <option value="أفريل">أفريل</option>
-      <option value="ماي">ماي</option>
-      <option value="جوان">جوان</option>
-    </select><br><br>
-
-    <label for="session">رقم الحصة (من 1 إلى 8):</label><br>
-    <input type="number" id="session" name="session" min="1" max="8" required><br><br>
-
-    <h3>اضغط على اسم الطالب لتسجيل غيابه:</h3>
-    
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('أوفراني بهاء الدين')" style="padding: 10px 20px; font-size: 16px;">
-        أوفراني بهاء الدين
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('اولاد المختار محيي الدين')" style="padding: 10px 20px; font-size: 16px;">
-        اولاد المختار محيي الدين
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('اولاد عمران محمد ياسين')" style="padding: 10px 20px; font-size: 16px;">
-        اولاد عمران محمد ياسين
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بابا عدون عمر')" style="padding: 10px 20px; font-size: 16px;">
-        بابا عدون عمر
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('باحة يوسف')" style="padding: 10px 20px; font-size: 16px;">
-        باحة يوسف
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('باطروشي فاطمة الزهراء')" style="padding: 10px 20px; font-size: 16px;">
-        باطروشي فاطمة الزهراء
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بطروشي فاطمة الزهراء')" style="padding: 10px 20px; font-size: 16px;">
-        بطروشي فاطمة الزهراء
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بطروشي محمد')" style="padding: 10px 20px; font-size: 16px;">
-        بطروشي محمد
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بلاغيث محمد')" style="padding: 10px 20px; font-size: 16px;">
-        بلاغيث محمد
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بلمشرح نور الايمان')" style="padding: 10px 20px; font-size: 16px;">
-        بلمشرح نور الايمان
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بلمعطي نور اليقين')" style="padding: 10px 20px; font-size: 16px;">
-        بلمعطي نور اليقين
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بلمهربت محمد')" style="padding: 10px 20px; font-size: 16px;">
-        بلمهربت محمد
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بن الشيخ شيماء')" style="padding: 10px 20px; font-size: 16px;">
-        بن الشيخ شيماء
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بن حميدة عبد الرحمان')" style="padding: 10px 20px; font-size: 16px;">
-        بن حميدة عبد الرحمان
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بن حود وصال غنية')" style="padding: 10px 20px; font-size: 16px;">
-        بن حود وصال غنية
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بن شهرة عواطف')" style="padding: 10px 20px; font-size: 16px;">
-        بن شهرة عواطف
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بن شهرة محمد رضوان')" style="padding: 10px 20px; font-size: 16px;">
-        بن شهرة محمد رضوان
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بن عودة زياد')" style="padding: 10px 20px; font-size: 16px;">
-        بن عودة زياد
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بهاز عبد الرؤوف')" style="padding: 10px 20px; font-size: 16px;">
-        بهاز عبد الرؤوف
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بهاز مهدي')" style="padding: 10px 20px; font-size: 16px;">
-        بهاز مهدي
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بوحفصي رهام')" style="padding: 10px 20px; font-size: 16px;">
-        بوحفصي رهام
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بوخشبة انس')" style="padding: 10px 20px; font-size: 16px;">
-        بوخشبة انس
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بودبوس سلسبيل')" style="padding: 10px 20px; font-size: 16px;">
-        بودبوس سلسبيل
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بودراع ماريا')" style="padding: 10px 20px; font-size: 16px;">
-        بودراع ماريا
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بورويس أيوب')" style="padding: 10px 20px; font-size: 16px;">
-        بورويس أيوب
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بورويس هيثم')" style="padding: 10px 20px; font-size: 16px;">
-        بورويس هيثم
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بوصبع رانيا')" style="padding: 10px 20px; font-size: 16px;">
-        بوصبع رانيا
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بوعصبة أميرة')" style="padding: 10px 20px; font-size: 16px;">
-        بوعصبة أميرة
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('بيقة سندس')" style="padding: 10px 20px; font-size: 16px;">
-        بيقة سندس
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('ثليب ملاك')" style="padding: 10px 20px; font-size: 16px;">
-        ثليب ملاك
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('جبريط زهير')" style="padding: 10px 20px; font-size: 16px;">
-        جبريط زهير
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('جبريط محمد سفيان')" style="padding: 10px 20px; font-size: 16px;">
-        جبريط محمد سفيان
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('جعفر زينب')" style="padding: 10px 20px; font-size: 16px;">
-        جعفر زينب
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('جقاوة شهد')" style="padding: 10px 20px; font-size: 16px;">
-        جقاوة شهد
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('جويبر أنفال')" style="padding: 10px 20px; font-size: 16px;">
-        جويبر أنفال
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('حاج قدور زهية')" style="padding: 10px 20px; font-size: 16px;">
-        حاج قدور زهية
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('حمراني مروة')" style="padding: 10px 20px; font-size: 16px;">
-        حمراني مروة
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('حمزة اسماء')" style="padding: 10px 20px; font-size: 16px;">
-        حمزة اسماء
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('حمزة نوفل')" style="padding: 10px 20px; font-size: 16px;">
-        حمزة نوفل
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('ديدوة وصال')" style="padding: 10px 20px; font-size: 16px;">
-        ديدوة وصال
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('زايدي جاسم')" style="padding: 10px 20px; font-size: 16px;">
-        زايدي جاسم
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('زايدي مريا')" style="padding: 10px 20px; font-size: 16px;">
-        زايدي مريا
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('سليماني محمد امين')" style="padding: 10px 20px; font-size: 16px;">
-        سليماني محمد امين
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('شائش أيوب')" style="padding: 10px 20px; font-size: 16px;">
-        شائش أيوب
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('شالخ علاء الدين')" style="padding: 10px 20px; font-size: 16px;">
-        شالخ علاء الدين
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('شايش ضاوية')" style="padding: 10px 20px; font-size: 16px;">
-        شايش ضاوية
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('شيخ بوبكر وئام')" style="padding: 10px 20px; font-size: 16px;">
-        شيخ بوبكر وئام
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('طالبي مسعودة')" style="padding: 10px 20px; font-size: 16px;">
-        طالبي مسعودة
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('عايشي رتاج')" style="padding: 10px 20px; font-size: 16px;">
-        عايشي رتاج
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('عبد الستار علي')" style="padding: 10px 20px; font-size: 16px;">
-        عبد الستار علي
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('عبد العزيز داود')" style="padding: 10px 20px; font-size: 16px;">
-        عبد العزيز داود
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('عمر صفاء')" style="padding: 10px 20px; font-size: 16px;">
-        عمر صفاء
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('عوني نهال')" style="padding: 10px 20px; font-size: 16px;">
-        عوني نهال
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('فالة صديق')" style="padding: 10px 20px; font-size: 16px;">
-        فالة صديق
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('فالة لبنى')" style="padding: 10px 20px; font-size: 16px;">
-        فالة لبنى
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('فراجي أميمة')" style="padding: 10px 20px; font-size: 16px;">
-        فراجي أميمة
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('فلقت ايوب')" style="padding: 10px 20px; font-size: 16px;">
-        فلقت ايوب
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('فهدي سلمى')" style="padding: 10px 20px; font-size: 16px;">
-        فهدي سلمى
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('قداوي محمد أنس')" style="padding: 10px 20px; font-size: 16px;">
-        قداوي محمد أنس
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('قرافي عبد الباسط')" style="padding: 10px 20px; font-size: 16px;">
-        قرافي عبد الباسط
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('قواسم رتاج')" style="padding: 10px 20px; font-size: 16px;">
-        قواسم رتاج
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('كرمية انفال')" style="padding: 10px 20px; font-size: 16px;">
-        كرمية انفال
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('لشهب عبد الحميد')" style="padding: 10px 20px; font-size: 16px;">
-        لشهب عبد الحميد
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('مهدي اشرف')" style="padding: 10px 20px; font-size: 16px;">
-        مهدي اشرف
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('موسى مريم')" style="padding: 10px 20px; font-size: 16px;">
-        موسى مريم
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('ميلودي كلثوم')" style="padding: 10px 20px; font-size: 16px;">
-        ميلودي كلثوم
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('نسوري نورة')" style="padding: 10px 20px; font-size: 16px;">
-        نسوري نورة
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('نواري ساجدة')" style="padding: 10px 20px; font-size: 16px;">
-        نواري ساجدة
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('نواري صفاء')" style="padding: 10px 20px; font-size: 16px;">
-        نواري صفاء
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('هيبة جهينة')" style="padding: 10px 20px; font-size: 16px;">
-        هيبة جهينة
-      </button>
-    </div>
-    
-
-    <div style="margin-bottom: 8px;">
-      <button type="button" onclick="submitAbsence('وايني شريف مولاي السلطان')" style="padding: 10px 20px; font-size: 16px;">
-        وايني شريف مولاي السلطان
-      </button>
-    </div>
-    
-  </form>
-
-  <p id="result" style="color: green; font-weight: bold;"></p>
-
+<body>
+  <h2>تسجيل الدخول باستخدام TikTok</h2>
+  <button onclick="login()">🔐 Login with TikTok</button>
+  <div id="uploadForm" class="hidden">
+    <h3>نموذج رفع فيديو</h3>
+    <input type="file" accept="video/mp4" id="videoFile"><br><br>
+    <input type="text" placeholder="عنوان الفيديو" id="title"><br><br>
+    <textarea placeholder="وصف الفيديو" id="desc"></textarea><br><br>
+    <button onclick="submit()">📤 Submit</button>
+  </div>
+  <div id="success" class="hidden">
+    <h3>✅ تم رفع الفيديو بنجاح!</h3>
+  </div>
   <script>
-    async function submitAbsence(studentName) {
-      const month = document.getElementById('month').value;
-      const session = document.getElementById('session').value;
-
-      if (!month || !session) {
-        alert("يرجى تحديد الشهر ورقم الحصة أولاً");
-        return;
-      }
-
-      const data = {
-        student_name: studentName,
-        month: month,
-        session: session
-      };
-
-      const webhookUrl = 'https://n8n-n8n.2h3jzn.easypanel.host/webhook-test/mark-student-absent';
-
-
-      try {
-        const response = await fetch(webhookUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-          document.getElementById('result').textContent = '✅ تم تسجيل غياب ' + studentName;
-        } else {
-          document.getElementById('result').textContent = '❌ حدث خطأ أثناء الإرسال';
-        }
-      } catch (error) {
-        document.getElementById('result').textContent = '⚠️ فشل الاتصال بالسيرفر';
+    function login() {
+      alert("تم تسجيل الدخول بـ TikTok");
+      document.getElementById("uploadForm").classList.remove("hidden");
+    }
+    function submit() {
+      const video = document.getElementById("videoFile").files[0];
+      const title = document.getElementById("title").value;
+      const desc = document.getElementById("desc").value;
+      if (video && title && desc) {
+        document.getElementById("success").classList.remove("hidden");
+      } else {
+        alert("يرجى ملء كل الحقول");
       }
     }
   </script>
-
 </body>
 </html>
